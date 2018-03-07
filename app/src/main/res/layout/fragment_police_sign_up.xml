@@ -1,0 +1,85 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:orientation="vertical"
+android:background="@color/colorPrimary"
+android:layout_height="match_parent"
+tools:context="com.example.kuzuiauhalifu.auth.PoliceSignUpFragment">
+
+<TextView
+    android:layout_width="wrap_content"
+    android:text="@string/app_name"
+    android:textSize="32sp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:textColor="@color/white"
+    android:layout_gravity="center_horizontal"
+    android:layout_height="wrap_content" />
+
+<TextView
+    android:layout_width="wrap_content"
+    android:text="Sign up to protect"
+    android:textSize="26sp"
+    android:layout_marginBottom="20dp"
+    android:textColor="@color/white"
+    android:layout_gravity="center_horizontal"
+    android:layout_height="wrap_content" />
+
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/police_man"
+    android:layout_gravity="center_horizontal"/>
+
+<android.support.design.widget.TextInputLayout
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
+    android:layout_width="match_parent" >
+
+    <EditText
+        android:id="@+id/police_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:textColorHint="@color/white"
+        android:hint="Enter your police id number here"
+        android:maxLines="1" />
+
+</android.support.design.widget.TextInputLayout>
+
+<android.support.design.widget.FloatingActionButton
+    android:id="@+id/fab_police_sign_up_continue"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:backgroundTint="@color/colorAccent"
+    android:layout_marginBottom="20dp"
+    android:src="@drawable/right_sign" />
+
+<Button
+    android:id="@+id/btnReg"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center|bottom"
+    android:background="#00000000"
+    android:onClick="PoliceLogIn"
+    android:text="Log In Here"
+    android:textSize="25sp"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:textColor="@color/colorAccent" />
+
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center|bottom"
+    android:background="#00000000"
+    android:onClick="registerCitizen"
+    android:text="Sign up as citizen"
+    android:textSize="25sp"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:textColor="@color/colorAccent" />
+
+</LinearLayout>
+

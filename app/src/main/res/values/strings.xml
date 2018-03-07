@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Wulinzi</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="not_registered">Register account here.</string>
+    <string name="citizen_log">Log in as citizen</string>
+    <string name="phone_example">Enter your active phone number</string>
+    <string name="dialog_prompt">Choose a crime category</string>
+
+    <string-array name="crimes">
+        <item>Hate Crime</item>
+        <item>Arson</item>
+        <item>Theft</item>
+        <item>Fraud</item>
+        <item>Homicide</item>
+        <item>Rape</item>
+        <item>Kidnap</item>
+        <item>Battery</item>
+        <item>Trespassing</item>
+    </string-array>
+</resources>
