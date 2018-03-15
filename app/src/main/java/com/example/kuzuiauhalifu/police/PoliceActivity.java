@@ -1,5 +1,6 @@
 package com.example.kuzuiauhalifu.police;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,7 +19,8 @@ public class PoliceActivity extends AppCompatActivity {
 
     public void viewBulletin(View view){}
 
-    public void viewSettings(View view){}
-
-    public void viewHistory(View view){}
+    public void viewSettings(View view){
+        Intent intent = new Intent(PoliceActivity.this, PoliceSettingsActivity.class);
+        startActivity(intent);
+    }
 }

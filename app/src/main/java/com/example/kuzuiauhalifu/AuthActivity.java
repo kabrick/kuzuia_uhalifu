@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.kuzuiauhalifu.auth.CitizenLogInFragment;
 import com.example.kuzuiauhalifu.auth.CitizenSignUpFragment;
@@ -62,5 +63,11 @@ public class AuthActivity extends AppCompatActivity {
     public void continuePoliceSignUp(){
         ContinuePoliceSignUpFragment fragment = new ContinuePoliceSignUpFragment();
         displayFragment(fragment);
+    }
+
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+        Toast.makeText(this, "Action is not allowed", Toast.LENGTH_LONG).show();
     }
 }

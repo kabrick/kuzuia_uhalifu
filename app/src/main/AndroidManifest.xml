@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.kuzuiauhalifu">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,9 +21,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".citizen.CitizenActivity" />
-        <activity android:name=".police.PoliceActivity" />
-        <activity android:name=".citizen.MoreCrimeDetailsActivity"></activity>
+        <activity
+            android:name=".citizen.CitizenActivity"
+            android:label="Citizen Hub" />
+        <activity
+            android:name=".police.PoliceActivity"
+            android:label="Police Hub" />
+        <activity
+            android:name=".citizen.SettingsActivity"
+            android:parentActivityName=".citizen.CitizenActivity" />
+        <activity android:name=".police.PoliceSettingsActivity" />
+        <activity
+            android:name=".citizen.CitizenBulletinActivity"
+            android:parentActivityName=".citizen.CitizenActivity" />
+        <activity
+            android:name=".citizen.CitizenHistoryActivity"
+            android:parentActivityName=".citizen.CitizenActivity" />
+        <activity android:name=".citizen.CitizenViewHistoryActivity" />
+        <activity android:name=".citizen.CitizenViewBulletinActivity" />
+        <activity android:name=".police.PoliceBulletinActivity"></activity>
     </application>
 
 </manifest>

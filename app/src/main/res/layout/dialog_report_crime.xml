@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
     android:id="@+id/dialog_report_crime">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:layout_marginBottom="7dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginRight="27dp"
         android:text="Choose a crime category"/>
 
     <Spinner
@@ -19,17 +23,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:entries="@array/crimes"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginRight="27dp"
         android:prompt="@string/dialog_prompt"/>
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginRight="27dp"
         app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout">
 
         <EditText
-            android:id="@+id/full_name_citizen"
+            android:id="@+id/crime_short_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Short description"
@@ -37,10 +45,21 @@
 
     </android.support.design.widget.TextInputLayout>
 
-    <TextView
-        android:id="@+id/location"
-        android:layout_width="wrap_content"
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Choose a crime category"/>
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginRight="27dp"
+        app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout">
+
+        <EditText
+            android:id="@+id/location_short"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Current Location"
+            android:inputType="text"/>
+
+    </android.support.design.widget.TextInputLayout>
 
 </LinearLayout>
