@@ -39,7 +39,10 @@
             android:parentActivityName=".citizen.CitizenActivity" />
         <activity android:name=".citizen.CitizenViewHistoryActivity" />
         <activity android:name=".citizen.CitizenViewBulletinActivity" />
-        <activity android:name=".police.PoliceBulletinActivity"></activity>
+        <activity android:name=".police.PoliceBulletinActivity" />
+        <activity android:name=".police.PoliceViewBulletinActivity" />
+        <activity android:name=".police.IncomingReportsActivity" />
+        <activity android:name=".police.ViewIncomingReportsActivity"></activity>
     </application>
 
 </manifest>

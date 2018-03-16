@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_add_bulletin_police"
+        android:enabled="true"
+        android:icon="@drawable/tip"
+        android:title="Add to Bulletin"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_update_report_police"
+        android:enabled="true"
+        android:icon="@drawable/update"
+        android:title="Update Status"
+        app:showAsAction="ifRoom" />
+
+</menu>

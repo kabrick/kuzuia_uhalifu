@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_tip_bulletin_police"
+        android:enabled="true"
+        android:icon="@drawable/tip"
+        android:title="View Tips"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_update_bulletin_police"
+        android:enabled="true"
+        android:icon="@drawable/update"
+        android:title="Update Status"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_delete_bulletin_police"
+        android:enabled="true"
+        android:icon="@drawable/delete"
+        android:title="Delete"
+        app:showAsAction="ifRoom" />
+
+</menu>

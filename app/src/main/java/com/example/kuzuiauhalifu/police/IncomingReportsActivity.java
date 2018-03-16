@@ -26,8 +26,6 @@ import com.android.volley.toolbox.Volley;
 import com.example.kuzuiauhalifu.R;
 import com.example.kuzuiauhalifu.adapters.BulletinDataAdapter;
 import com.example.kuzuiauhalifu.adapters.CitizenBulletinRecyclerViewAdapter;
-import com.example.kuzuiauhalifu.citizen.CitizenBulletinActivity;
-import com.example.kuzuiauhalifu.citizen.CitizenViewBulletinActivity;
 import com.example.kuzuiauhalifu.util.Util;
 
 import org.json.JSONArray;
@@ -37,7 +35,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PoliceBulletinActivity extends AppCompatActivity {
+public class IncomingReportsActivity extends AppCompatActivity {
 
     List<BulletinDataAdapter> DataAdapterClassList;
     RecyclerView recyclerView;
@@ -47,7 +45,7 @@ public class PoliceBulletinActivity extends AppCompatActivity {
     JsonArrayRequest jsonArrayRequest ;
     ArrayList<Integer> bulletinIds;
     RequestQueue requestQueue ;
-    String php_file = "get_bulletin.php";
+    String php_file = "get_reports.php";
     Util util;
     String network_address;
     View ChildView ;
@@ -57,15 +55,15 @@ public class PoliceBulletinActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_police_bulletin);
+        setContentView(R.layout.activity_incoming_reports);
 
         DataAdapterClassList = new ArrayList<>();
 
         bulletinIds = new ArrayList<>();
 
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerViewPoliceBulletin);
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerViewPoliceIncoming);
 
-        progressBar = (ProgressBar) findViewById(R.id.progressBarPoliceBulletin);
+        progressBar = (ProgressBar) findViewById(R.id.progressBarPoliceIncoming);
 
         recyclerView.setHasFixedSize(true);
 
@@ -83,7 +81,7 @@ public class PoliceBulletinActivity extends AppCompatActivity {
         //RecyclerView Item click listener code starts from here.
         recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
 
-            GestureDetector gestureDetector = new GestureDetector(PoliceBulletinActivity.this, new GestureDetector.SimpleOnGestureListener() {
+            GestureDetector gestureDetector = new GestureDetector(IncomingReportsActivity.this, new GestureDetector.SimpleOnGestureListener() {
 
                 @Override public boolean onSingleTapUp(MotionEvent motionEvent) {
 
@@ -103,7 +101,7 @@ public class PoliceBulletinActivity extends AppCompatActivity {
 
                     clickedItemId = bulletinIds.get(RecyclerViewClickedItemPOS).toString();
 
-                    Intent intent = new Intent(PoliceBulletinActivity.this, PoliceViewBulletinActivity.class);
+                    Intent intent = new Intent(IncomingReportsActivity.this, ViewIncomingReportsActivity.class);
                     intent.putExtra("entry_id", clickedItemId);
                     startActivity(intent);
 
@@ -140,15 +138,15 @@ public class PoliceBulletinActivity extends AppCompatActivity {
                         Log.e("Error", error.toString());
 
                         if (error instanceof TimeoutError || error instanceof NoConnectionError) {
-                            Toast.makeText(PoliceBulletinActivity.this,"Connection Error. Please check your connection",Toast.LENGTH_LONG).show();
+                            Toast.makeText(IncomingReportsActivity.this,"Connection Error. Please check your connection",Toast.LENGTH_LONG).show();
                         } else if (error instanceof AuthFailureError) {
-                            Toast.makeText(PoliceBulletinActivity.this,"Authentication error",Toast.LENGTH_LONG).show();
+                            Toast.makeText(IncomingReportsActivity.this,"Authentication error",Toast.LENGTH_LONG).show();
                         } else if (error instanceof ServerError) {
-                            Toast.makeText(PoliceBulletinActivity.this,"Server error",Toast.LENGTH_LONG).show();
+                            Toast.makeText(IncomingReportsActivity.this,"Server error",Toast.LENGTH_LONG).show();
                         } else if (error instanceof NetworkError) {
-                            Toast.makeText(PoliceBulletinActivity.this,"Network error",Toast.LENGTH_LONG).show();
+                            Toast.makeText(IncomingReportsActivity.this,"Network error",Toast.LENGTH_LONG).show();
                         } else if (error instanceof ParseError) {
-                            Toast.makeText(PoliceBulletinActivity.this,"Data from server not Available",Toast.LENGTH_LONG).show();
+                            Toast.makeText(IncomingReportsActivity.this,"Data from server not Available",Toast.LENGTH_LONG).show();
                         }
                     }
                 });

@@ -15,9 +15,15 @@ public class PoliceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_police);
     }
 
-    public void viewIncomingReports(View view){}
+    public void viewIncomingReports(View view){
+        Intent intent = new Intent(PoliceActivity.this, IncomingReportsActivity.class);
+        startActivity(intent);
+    }
 
-    public void viewBulletin(View view){}
+    public void viewBulletin(View view){
+        Intent intent = new Intent(PoliceActivity.this, PoliceBulletinActivity.class);
+        startActivity(intent);
+    }
 
     public void viewSettings(View view){
         Intent intent = new Intent(PoliceActivity.this, PoliceSettingsActivity.class);

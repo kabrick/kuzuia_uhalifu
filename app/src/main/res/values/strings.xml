@@ -20,4 +20,13 @@
         <item>Battery</item>
         <item>Trespassing</item>
     </string-array>
+
+    <string-array name="status">
+        <item>Verified</item>
+        <item>Arrests Made</item>
+        <item>Case Solved</item>
+        <item>Cold Case</item>
+        <item>Unverified</item>
+        <item>False Report</item>
+    </string-array>
 </resources>

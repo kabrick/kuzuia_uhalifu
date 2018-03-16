@@ -35,7 +35,6 @@ public class Util {
     }
 
     public String getIpAddress(){
-        //return "http://192.168.93.12/crimeprevent/";
-        return "http://192.168.43.121/crimeprevent/";
+        return "http://192.168.93.12/crimeprevent/";
     }
 }
