@@ -28,12 +28,14 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.kuzuiauhalifu.R;
+import com.example.kuzuiauhalifu.util.PrefManager;
 import com.example.kuzuiauhalifu.util.Util;
 
 public class CitizenViewBulletinActivity extends AppCompatActivity {
 
     String php_file = "get_single_bulletin.php";
     Util util;
+    PrefManager prefManager;
     String network_address;
     TextView category, description, location, date, status;
     EditText editText;
@@ -75,6 +77,7 @@ public class CitizenViewBulletinActivity extends AppCompatActivity {
         id = getIntent().getStringExtra("entry_id");
 
         util = new Util();
+        prefManager = new PrefManager(getApplicationContext());
 
         //call function to get strings and display
         getNetworkString(php_file, id, "1");
@@ -185,7 +188,7 @@ public class CitizenViewBulletinActivity extends AppCompatActivity {
     }
 
     public void sendTip(String tip){
-        String user_id = "1";
+        String user_id = prefManager.getUserId();
         String network_address = util.getIpAddress() + "record_tip.php?id=" + id + "&tip=" + tip + "&user_id=" + user_id;
 
         // Instantiate the RequestQueue.
@@ -196,7 +199,7 @@ public class CitizenViewBulletinActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(CitizenViewBulletinActivity.this, "Entry has been deleted", Toast.LENGTH_LONG).show();
+                        Toast.makeText(CitizenViewBulletinActivity.this, "Your tip has been recorded", Toast.LENGTH_LONG).show();
                     }
                 }, new Response.ErrorListener() {
             @Override

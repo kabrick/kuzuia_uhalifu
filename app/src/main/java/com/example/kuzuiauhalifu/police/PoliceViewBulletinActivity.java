@@ -1,6 +1,7 @@
 package com.example.kuzuiauhalifu.police;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AlertDialog;
@@ -216,6 +217,8 @@ public class PoliceViewBulletinActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         Toast.makeText(PoliceViewBulletinActivity.this, "Entry has been deleted", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(PoliceViewBulletinActivity.this, PoliceActivity.class);
+                        startActivity(intent);
                     }
                 }, new Response.ErrorListener() {
             @Override

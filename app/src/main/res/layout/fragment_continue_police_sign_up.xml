@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="20dp"
-        android:text="Hello John Doe"
+        android:id="@+id/officer_name"
         android:textColor="@color/white"
         android:textSize="26sp" />
 
@@ -48,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="User Name"
-            android:inputType="phone"
+            android:inputType="text"
             android:maxLines="1"
             android:textColorHint="@color/white" />
 

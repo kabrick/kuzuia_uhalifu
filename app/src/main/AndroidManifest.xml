@@ -29,20 +29,46 @@
             android:label="Police Hub" />
         <activity
             android:name=".citizen.SettingsActivity"
+            android:label="Settings"
             android:parentActivityName=".citizen.CitizenActivity" />
-        <activity android:name=".police.PoliceSettingsActivity" />
+
+        <activity
+            android:name=".police.PoliceSettingsActivity"
+            android:label="Settings"
+            android:parentActivityName=".police.PoliceActivity"/>
+
         <activity
             android:name=".citizen.CitizenBulletinActivity"
+            android:label="Bulletin"
             android:parentActivityName=".citizen.CitizenActivity" />
         <activity
             android:name=".citizen.CitizenHistoryActivity"
+            android:label="History"
             android:parentActivityName=".citizen.CitizenActivity" />
-        <activity android:name=".citizen.CitizenViewHistoryActivity" />
-        <activity android:name=".citizen.CitizenViewBulletinActivity" />
-        <activity android:name=".police.PoliceBulletinActivity" />
-        <activity android:name=".police.PoliceViewBulletinActivity" />
-        <activity android:name=".police.IncomingReportsActivity" />
-        <activity android:name=".police.ViewIncomingReportsActivity"></activity>
+        <activity
+            android:name=".citizen.CitizenViewHistoryActivity"
+            android:label="History"
+            android:parentActivityName=".citizen.CitizenActivity" />
+        <activity
+            android:name=".citizen.CitizenViewBulletinActivity"
+            android:label="Bulletin"
+            android:parentActivityName=".citizen.CitizenActivity" />
+        <activity
+            android:name=".police.PoliceBulletinActivity"
+            android:label="Bulletin"
+            android:parentActivityName=".police.PoliceActivity" />
+        <activity
+            android:name=".police.PoliceViewBulletinActivity"
+            android:label="Bulletin"
+            android:parentActivityName=".police.PoliceActivity" />
+        <activity
+            android:name=".police.IncomingReportsActivity"
+            android:label="Reports"
+            android:parentActivityName=".police.PoliceActivity" />
+        <activity
+            android:name=".police.ViewIncomingReportsActivity"
+            android:label="Reports"
+            android:parentActivityName=".police.PoliceActivity"/>
     </application>
 
 </manifest>

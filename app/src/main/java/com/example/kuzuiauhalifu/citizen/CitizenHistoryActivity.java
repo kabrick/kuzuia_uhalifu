@@ -26,6 +26,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.kuzuiauhalifu.R;
 import com.example.kuzuiauhalifu.adapters.BulletinDataAdapter;
 import com.example.kuzuiauhalifu.adapters.CitizenBulletinRecyclerViewAdapter;
+import com.example.kuzuiauhalifu.util.PrefManager;
 import com.example.kuzuiauhalifu.util.Util;
 
 import org.json.JSONArray;
@@ -47,6 +48,7 @@ public class CitizenHistoryActivity extends AppCompatActivity {
     RequestQueue requestQueue ;
     String php_file = "get_history_citizen.php";
     Util util;
+    PrefManager prefManager;
     String user_id;
     String network_address;
     View ChildView ;
@@ -73,8 +75,9 @@ public class CitizenHistoryActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(recyclerViewlayoutManager);
 
         util = new Util();
+        prefManager = new PrefManager(getApplicationContext());
 
-        user_id = "1";
+        user_id = prefManager.getUserId();
 
         network_address = util.getIpAddress() + php_file + "?id=" + user_id;
 

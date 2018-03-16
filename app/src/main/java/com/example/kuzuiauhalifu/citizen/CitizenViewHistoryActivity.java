@@ -28,12 +28,14 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.kuzuiauhalifu.R;
+import com.example.kuzuiauhalifu.util.PrefManager;
 import com.example.kuzuiauhalifu.util.Util;
 
 public class CitizenViewHistoryActivity extends AppCompatActivity {
 
     String php_file = "get_single_entry.php";
     Util util;
+    PrefManager prefManager;
     String network_address;
     TextView category, description, location, date, status;
     EditText editText;
@@ -78,6 +80,7 @@ public class CitizenViewHistoryActivity extends AppCompatActivity {
         id = getIntent().getStringExtra("entry_id");
 
         util = new Util();
+        prefManager = new PrefManager(getApplicationContext());
 
         //call function to get strings and display
         getNetworkString(php_file, id, "1");
@@ -154,6 +157,8 @@ public class CitizenViewHistoryActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         Toast.makeText(CitizenViewHistoryActivity.this, "Entry has been deleted", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(CitizenViewHistoryActivity.this, CitizenActivity.class);
+                        startActivity(intent);
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -211,7 +216,7 @@ public class CitizenViewHistoryActivity extends AppCompatActivity {
     }
 
     public void sendTip(String tip){
-        String user_id = "1";
+        String user_id = prefManager.getUserId();
         String network_address = util.getIpAddress() + "record_tip.php?id=" + id + "&tip=" + tip + "&user_id=" + user_id;
 
         // Instantiate the RequestQueue.

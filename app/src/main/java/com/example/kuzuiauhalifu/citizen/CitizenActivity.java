@@ -20,11 +20,13 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.kuzuiauhalifu.R;
+import com.example.kuzuiauhalifu.util.PrefManager;
 import com.example.kuzuiauhalifu.util.Util;
 
 public class CitizenActivity extends AppCompatActivity {
 
     Util util;
+    PrefManager prefManager;
     Spinner category;
     EditText location, description;
 
@@ -32,6 +34,9 @@ public class CitizenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_citizen);
+
+        util = new Util();
+        prefManager = new PrefManager(getApplicationContext());
     }
 
     public void reportCrime(final View view){
@@ -41,6 +46,8 @@ public class CitizenActivity extends AppCompatActivity {
         View view1 = inflater1.inflate(R.layout.dialog_report_crime, null);
 
         category = (Spinner) view1.findViewById(R.id.spinner);
+        location = (EditText) view1.findViewById(R.id.location_short);
+        description = (EditText) view1.findViewById(R.id.crime_short_description);
 
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
         alertDialog.setTitle("Quick Crime Report");
@@ -86,7 +93,7 @@ public class CitizenActivity extends AppCompatActivity {
     }
 
     public void submitReport(String category, String location, String description){
-        String user_id = "1";
+        String user_id = prefManager.getUserId();
         String network_address = util.getIpAddress() +
                 "record_new_report.php?category=" + category +
                 "&location=" + location +

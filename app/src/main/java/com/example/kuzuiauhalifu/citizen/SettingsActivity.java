@@ -16,12 +16,14 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.kuzuiauhalifu.R;
+import com.example.kuzuiauhalifu.util.PrefManager;
 import com.example.kuzuiauhalifu.util.Util;
 
 public class SettingsActivity extends AppCompatActivity {
 
     ListView listView;
     Util util;
+    PrefManager prefManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,8 @@ public class SettingsActivity extends AppCompatActivity {
 
         // Get ListView object from xml
         listView = (ListView) findViewById(R.id.settings_list_citizens);
+        util = new Util();
+        prefManager = new PrefManager(getApplicationContext());
 
         // Defined Array values to show in ListView
         String[] values = new String[] { "Log out","Clear my history"};
@@ -55,7 +59,8 @@ public class SettingsActivity extends AppCompatActivity {
                                     int position, long id) {
 
                 if (position == 0){
-                    //clear user log data here
+                    prefManager.deleteUserId();
+                    SettingsActivity.this.finishAffinity();
                 }
                 else if (position == 1){
                     deleteHistory();
@@ -66,7 +71,7 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     public void deleteHistory(){
-        String user_id = "1";
+        String user_id = prefManager.getUserId();
 
         String network_address = util.getIpAddress() + "delete_history.php?id=" + user_id;
 

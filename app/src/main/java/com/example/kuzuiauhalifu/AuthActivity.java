@@ -17,6 +17,9 @@ import com.example.kuzuiauhalifu.auth.PoliceSignUpFragment;
 
 public class AuthActivity extends AppCompatActivity {
 
+    String name;
+    String phone;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,12 +58,14 @@ public class AuthActivity extends AppCompatActivity {
         displayFragment(fragment);
     }
 
-    public void continueCitizenSignUp(){
+    public void continueCitizenSignUp(String phone){
+        this.phone = phone;
         ContinueCitizenSignUpFragment fragment = new ContinueCitizenSignUpFragment();
         displayFragment(fragment);
     }
 
-    public void continuePoliceSignUp(){
+    public void continuePoliceSignUp(String name){
+        this.name = name;
         ContinuePoliceSignUpFragment fragment = new ContinuePoliceSignUpFragment();
         displayFragment(fragment);
     }
@@ -69,5 +74,13 @@ public class AuthActivity extends AppCompatActivity {
     public void onBackPressed() {
         //super.onBackPressed();
         Toast.makeText(this, "Action is not allowed", Toast.LENGTH_LONG).show();
+    }
+
+    public String getName(){
+        return this.name;
+    }
+
+    public String getPhone(){
+        return this.phone;
     }
 }

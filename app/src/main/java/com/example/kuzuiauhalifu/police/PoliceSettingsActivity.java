@@ -8,10 +8,14 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.kuzuiauhalifu.R;
+import com.example.kuzuiauhalifu.util.PrefManager;
+import com.example.kuzuiauhalifu.util.Util;
 
 public class PoliceSettingsActivity extends AppCompatActivity {
 
     ListView listView;
+    Util util;
+    PrefManager prefManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +24,9 @@ public class PoliceSettingsActivity extends AppCompatActivity {
 
         // Get ListView object from xml
         listView = (ListView) findViewById(R.id.settings_list_police);
+
+        util = new Util();
+        prefManager = new PrefManager(getApplicationContext());
 
         // Defined Array values to show in ListView
         String[] values = new String[] { "Log out"};
@@ -45,7 +52,8 @@ public class PoliceSettingsActivity extends AppCompatActivity {
                                     int position, long id) {
 
                 if (position == 0){
-                    //clear user log data here
+                    prefManager.deleteUserId();
+                    PoliceSettingsActivity.this.finishAffinity();
                 }
             }
 
