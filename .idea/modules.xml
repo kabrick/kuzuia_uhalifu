@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/KuzuiaUhalifu.iml" filepath="$PROJECT_DIR$/KuzuiaUhalifu.iml" group="KuzuiaUhalifu" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="KuzuiaUhalifu/app" />
+    </modules>
+  </component>
+</project>
